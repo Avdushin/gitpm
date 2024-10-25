@@ -220,9 +220,9 @@ All profiles have been removed successfully!
 
 1. **Скачайте нужный файл**:
 
-   - **Windows**: [Скачать `gitpm.exe`](bin/windows/gitpm.exe)
-   - **Linux**: [Скачать `gitpm`](bin/linux/gitpm)
-   - **macOS**: [Скачать `gitpm`](bin/macos/gitpm)
+   - **Windows**: [Скачать `gitpm.exe`](https://github.com/Avdushin/gitpm/raw/refs/tags/V0.1.0/bin/windows/gitpm.exe)
+   - **Linux**: [Скачать `gitpm`](https://github.com/Avdushin/gitpm/raw/refs/tags/V0.1.0/bin/linux/gitpm)
+   - **macOS**: [Скачать `gitpm`](https://github.com/Avdushin/gitpm/raw/refs/tags/V0.1.0/bin/macos/gitpm)
 
 2. **Разместите файл в удобной директории**:
    Например, создайте директорию `~/gitpm` и поместите туда файл `gitpm` или `gitpm.exe`.
