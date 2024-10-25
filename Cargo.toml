@@ -4,6 +4,14 @@ description = "Git Profile Manager"
 version = "0.1.0"
 edition = "2021"
 authors = ["Avdushin <avdushinbeaver1@gmail.com>"]
+categories = ["command-line-utilities"]
+homepage = "https://avdushin.github.io/gitpm/"
+repository = "https://avdushin.github.io/gitpm"
+keywords = ["tool", "cli", "rust", "github-cli", "clap-rs", "git-config", "gitlab", "gitflick", "NotABug", "profiles-manager"]
+
+[[bin]]
+name = "gitpm"
+path = "src/main.rs"
 
 [dependencies]
 clap = { version = "4.0", features = ["derive"] }
