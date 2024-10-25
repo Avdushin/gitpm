@@ -66,131 +66,36 @@
 <body>
 
 <h1>Git Profile Manager</h1>
-<h3>Author: <a href="https://github.com/Avdushin">Avdushin</a></h3>
-<p><strong>Git Profile Manager</strong> — это CLI-инструмент для удобного управления несколькими профилями Git. Если вы работаете с разными учетными записями на GitHub, GitLab или других платформах, данное приложение позволяет легко переключаться между профилями, не вводя каждый раз имя пользователя и адрес электронной почты вручную.</p>
+<div id="readme-content">
+  <p>Загрузка содержимого README.md...</p>
+</div>
 
-<h2>Как работает</h2>
-<p>Git Profile Manager предоставляет набор команд для создания и управления профилями Git:</p>
-<pre>
-Usage: gitpm.exe &lt;COMMAND&gt;
+<script>
+  async function loadReadme() {
+    try {
+      const response = await fetch('https://api.github.com/repos/Avdushin/gitpm/readme', {
+        headers: { Accept: 'application/vnd.github.v3.raw' }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Ошибка загрузки README.md: ${response.status}`);
+      }
+      
+      const markdownText = await response.text();
+      
+      const converter = new showdown.Converter();
+      const htmlContent = converter.makeHtml(markdownText);
+      
+      document.getElementById('readme-content').innerHTML = htmlContent;
+    } catch (error) {
+      document.getElementById('readme-content').innerHTML = `<p>Ошибка: ${error.message}</p>`;
+    }
+  }
 
-Commands:
-  add         Add a new Git profile
-  switch      Switch to an existing Git profile
-  remove      Remove a specific Git profile (aliases: rm, -rm)
-  remove-all  Remove all Git profiles
-  list        List all Git profiles
-  doctor      Check the configuration directory and settings (aliases: doc, -doc)
-  current     Show the current Git profile
-  version     Get current CLI version (aliases: -v, --version)
-  help        Print this message or the help of the given subcommand(s)
+  loadReadme();
+</script>
 
-Options:
-  -h, --help  Print help
-</pre>
-
-<h2>Использование</h2>
-<p>После установки вы можете использовать команду <code>gitpm</code> в терминале для запуска программы и выполнения команд. Примеры использования:</p>
-
-<details>
-  <summary>Добавление нового профиля (gitpm add)</summary>
-  <pre>$ gitpm add
-Enter profile name or select a profile service (1 - GitHub, 2 - GitLab, 3 - Other):
-Example_profile
-Enter user name: example
-Enter email: example@gmail.com
-Enter remote URL (optional):
-Profile added successfully!</pre>
-</details>
-
-<details>
-  <summary>Переключение на другой профиль (gitpm switch)</summary>
-  <pre>$ gitpm switch
-Select a profile to switch to:
-1. GitFlick
-2. GitHub_Avdushin
-3. Example_profile
-4. GitLab_Avdushin
-Enter the number of the profile: 3
-Switched to profile 'Example_profile'</pre>
-</details>
-
-<details>
-  <summary>Получение текущего профиля (gitpm current)</summary>
-  <pre>$ gitpm current
-Current Git Profile:
----------------------
-User Name: example
-Email: example@gmail.com</pre>
-</details>
-
-<details>
-  <summary>Отображение списка всех профилей (gitpm list)</summary>
-  <pre>$ gitpm list
-
-Your Profiles:
---------------
-Profile Name: GitHub_Avdushin
-Service_User: GitHub_Avdushin
-User Name: Avdushin
-Email: avdushinbeaver1@gmail.com
-Remote:
-
-Profile Name: Example_profile
-Service_User: Example_profile
-User Name: example
-Email: example@gmail.com
-Remote:</pre>
-</details>
-
-<details>
-  <summary>Диагностика конфигураций (gitpm doctor)</summary>
-  <pre>$ gitpm doctor
-Configuration directory: C:\Users\avdus\AppData\Roaming\GitProjectManager\gitpm\config
-Configuration file: C:\Users\avdus\AppData\Roaming\GitProjectManager\gitpm\config/profiles.json</pre>
-</details>
-
-<details>
-  <summary>Удаление профиля (gitpm remove)</summary>
-  <pre>$ gitpm remove
-Select a profile to remove:
-1. GitLab_Avdushin
-2. Example_profile
-3. GitFlick
-4. GitHub_Avdushin
-Enter the number of the profile: 2
-Are you sure you want to remove the profile 'Example_profile' (y/n): y
-Profile 'Example_profile' removed successfully!</pre>
-</details>
-
-<details>
-  <summary>Удаление всех профилей (gitpm remove-all)</summary>
-  <pre>$ gitpm remove-all
-Are you sure you want to remove all profiles? (y/n): y
-All profiles have been removed successfully!</pre>
-</details>
-
-<h2>Как установить</h2>
-<h3>Требования</h3>
-<ul>
-  <li>Git (необходимо для работы профилей)</li>
-  <li>Rust (требуется для компиляции, если вы собираетесь собрать программу из исходного кода)</li>
-</ul>
-
-<h3>Установка</h3>
-<ol>
-  <li>Скачайте нужный файл для вашей операционной системы.</li>
-  <li>Добавьте директорию в PATH. Пример:</li>
-</ol>
-<pre>Windows: C:\Users\Ваше_Имя\gitpm
-Linux и macOS: ~/gitpm</pre>
-
-<details>
-  <summary>Установка из исходного кода</summary>
-  <pre>$ git clone https://github.com/Avdushin/gitpm
-$ cd gitpm
-$ cargo build --release</pre>
-</details>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
 </body>
 </html>
