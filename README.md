@@ -238,16 +238,15 @@ All profiles have been removed successfully!
 
    #### Linux и macOS
 
-   - Откройте терминал.
-   - Откройте файл `~/.bashrc` (или `~/.zshrc`, если используете zsh) и добавьте в него следующую строку:
-     ```bash
-     export PATH="$PATH:~/gitpm"
-     ```
-   - Сохраните файл и выполните команду:
-     ```bash
-     source ~/.bashrc   # для bash
-     source ~/.zshrc    # для zsh
-     ```
+   ```bash
+   https://github.com/Avdushin/gitpm
+   cd gitpm
+   # linux
+   sudo cp -rf bin/linux/gitpm /usr/local/bin
+   # macos
+   sudo cp -rf bin/macos/gitpm /usr/local/bin
+   ```
+   
 
 4. **Проверьте установку**:
    Откройте новый терминал и выполните:
